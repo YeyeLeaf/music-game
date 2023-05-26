@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/all.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script type="text/javascript" src="js/song.json"></script>
+    <script src="js/play.js"></script>
+  </head>
+
+  <body>
+    <div class="content">
+      <h1>Music Game</h1>
+      <form action="signupData.php" class="login" method="post">
+        <legend>Sign up</legend>
+        <div class="name">
+          <i class="fas fa-user" style="color: white"></i>
+          <input type="text" placeholder="Name" name="name" required />
+        </div>
+        <div class="pwd">
+          <i class="fas fa-lock" style="color: white"></i>
+          <input type="password" placeholder="Password" name="pwd" required />
+        </div>
+        <input type="submit" value="Sign up" class="loginBtn" />
+      </form>
+    </div>
+  </body>
+</html>

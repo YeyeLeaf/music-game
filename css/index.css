@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    min-height: 577px;
+}
+h1 {
+    font-style: italic;
+    font-size: 80px;
+    font-weight: 900;
+    -webkit-text-stroke: 1px blueviolet;
+    text-align: center;
+    color:white;
+    margin: 20px 0;
+    text-shadow: 0 0 10px palevioletred, 0 0 20px palevioletred;
+}
+.login input{
+    /* display: block; */
+    margin: 5px;
+}
+.login input[type="text"], .login input[type="password"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+.login input::placeholder {
+    color: palevioletred;
+}
+.login .gotoSign {
+    margin-top: 1em;;
+    color: white;
+    text-decoration: none;
+}
+.login .gotoSign:hover {
+    text-decoration: underline;
+}
+.login legend {
+    font-size: 32px;
+    color: white;
+    margin-bottom: 1em;
+}
+.loginBtn {
+    background-color: blueviolet;
+    color: white;
+    border: 2px solid white;
+    border-radius: 9999px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.loginBtn:hover {
+    transform: scale(1.1);
+    background-color: violet;
+}
+.login {
+    min-width: 300px;
+    background-color: palevioletred;
+    padding: 40px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 5px palevioletred, 0 0 10px palevioletred;
+}
