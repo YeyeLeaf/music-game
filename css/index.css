@@ -17,7 +17,6 @@ h1 {
     text-shadow: 0 0 10px palevioletred, 0 0 20px palevioletred;
 }
 .login input{
-    /* display: block; */
     margin: 5px;
 }
 .login input[type="text"], .login input[type="password"] {
@@ -42,7 +41,7 @@ h1 {
     margin-bottom: 1em;
 }
 .loginBtn {
-    background-color: blueviolet;
+    background-color: rgb(138,43,226,0.6);
     color: white;
     border: 2px solid white;
     border-radius: 9999px;
@@ -52,16 +51,16 @@ h1 {
 }
 .loginBtn:hover {
     transform: scale(1.1);
-    background-color: violet;
+    background-color: rgb(238,130,238,0.6);
 }
 .login {
     min-width: 300px;
-    background-color: palevioletred;
+    background-color: rgb(216,112,147,0.6);
     padding: 40px;
     border-radius: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 0 5px palevioletred, 0 0 10px palevioletred;
+    box-shadow: 0 0 20px lightpink, 0 0 30px lightpink;
 }

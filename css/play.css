@@ -1,8 +1,8 @@
 .play_area {
     width: 50%;
-    height: 575px;
+    height: 577px;
     background-color: black;
-	opacity: 0.75;
+	opacity: 0.5;
     margin: 0 auto;
     display: flex;
 }
@@ -21,6 +21,7 @@
 	background-color: brown;
 }
 .clickLine {
+	background-color: pink;
 	box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
 }
 .box {
@@ -30,4 +31,25 @@
 	box-shadow: 0 0 10px white, 0 0 20px white;
 	position: absolute;
 	top: 0;
+	opacity: 1;
+}
+#background-video {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	opacity: 0.75;
+  }
+.score {
+	position: absolute;
+	top: 400px;
+	left: 47%;
+	color: white;
+	font-size: 40px;
+	font-weight: 800;
+	text-shadow: 0 0 10px palevioletred, 0 0 20px palevioletred, 0 0 30px palevioletred;
+	z-index: 10;
 }

@@ -11,16 +11,24 @@
     />
     <link rel="stylesheet" type="text/css" href="css/play.css" />
     <link rel="stylesheet" type="text/css" href="css/all.css" />
-    <script type="text/javascript" src="js/song.json"></script>
-    <script src="js/play.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/play.js" type="module"></script>
   </head>
   <body>
-    <button class="startBtn" onclick="playAudio()">start</button>
+    <p class="score"></p>
     <div class="play_area">
       <div class="track"><div class="line"></div></div>
       <div class="track"><div class="line"></div></div>
       <div class="track"><div class="line"></div></div>
       <div class="track"><div class="line"></div></div>
     </div>
+
+    <video id="background-video">
+      <source src="" type="video/mp4" />
+    </video>
   </body>
 </html>
