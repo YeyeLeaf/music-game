@@ -43,7 +43,6 @@ $_SESSION['history_inserted'] = false;
             </div>
         </div>
         <div class="person">
-            <img src="img/setting.png" alt="setting" class="setting">
             <a href="person.php"><img src="img/leaf.png" class="profile"></a>
         </div>
     </div>

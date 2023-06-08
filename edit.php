@@ -13,7 +13,7 @@
 
 <body>
     <div class="content">
-        <form action="update_infor.php" class="update_infor" method="post">
+        <form action="updateEdit.php" class="update_infor" method="post">
             <legend>Edit</legend>
             <?php
             session_start();
@@ -23,21 +23,23 @@
                 header('location: index.html');
             } else {
                 require('conn_mysql.php');
-                $sql_query = "SELECT * FROM user WHERE name = '$name'";
+                $sql_query = "SELECT * FROM personal_infor WHERE name = '$name'";
                 $result = mysqli_query($conn, $sql_query);
-            }
-            ?>
-            <div class="photo"><label for="photo">Choose your photo</label>
-                <input type="file" name="photo" id="photo" />
+                $infor = mysqli_fetch_assoc($result);
+                print('<div class="photo"><label for="photo">Choose your photo</label>
+                <input type="file" name="upfile" id="photo" />
             </div>
             <div class="name">
                 <i class="fas fa-user" style="color: white"></i>
-                <input type="text" placeholder="Name" name="name" />
+                <input type="text" placeholder="Name" name="name" value="' . $infor['name'] . '"/>
             </div>
             <div class="pwd">
                 <i class="fas fa-lock" style="color: white"></i>
-                <input type="password" placeholder="Password" name="pwd" />
-            </div>
+                <input type="password" placeholder="Password" name="pwd" value="' . $infor['password'] . '"/>
+            </div>');
+            }
+            ?>
+
             <input type="submit" value="Change" class="Btn" />
         </form>
     </div>

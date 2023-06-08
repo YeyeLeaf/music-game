@@ -1,19 +1,29 @@
 let video = document.querySelector("#background-video");
+let body = document.querySelector('body');
+
 function playVideo() {
-    
         video.src = "./video/"+songName+".mp4";
         times = second[0]-5250;
+        console.log(times);
         timer = setInterval(function(){
+            if (body.requestFullscreen) {
+                body.requestFullscreen();
+              } else if (body.mozRequestFullScreen) {
+                body.mozRequestFullScreen(); // 兼容 Firefox
+              } else if (body.webkitRequestFullscreen) {
+                body.webkitRequestFullscreen(); // 兼容 Chrome、Safari和Opera
+              } else if (body.msRequestFullscreen) {
+                body.msRequestFullscreen(); // 兼容 Edge
+              }
             if(times == second[i]-5250) start();
             times += 25;
             Miss();
         }, 25);
         setTimeout(function(){
             video.play();
-        }, -second[0]+5250);
-
-    
-    
+            console.log(-second[0]+5250);
+            console.log(times);
+        }, -second[0]+5975);
 }
 
 let second;
@@ -61,7 +71,7 @@ function playSound(){
     keyS.play();
 }
 document.onkeydown = function(e){
-    console.log(times);
+    //console.log(times);
     record.push(times+5250);
     let crack, line;
     if(e.keyCode == 81) {
