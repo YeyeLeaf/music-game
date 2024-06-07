@@ -20,10 +20,22 @@
 	height: 10px;
 	background-color: brown;
 }
+/* .line p{
+	position: absolute;
+	top: 10px;
+	left: 45%;
+	color: brown;
+	font-size: 20px;
+} */
 .clickLine {
 	background-color: pink;
 	box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
 }
+/* .clickLine p{
+	color: pink;
+	-webkit-text-stroke: 1px red;
+	box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+} */
 .box {
 	width: 100%;
 	height: 10px;

@@ -4,32 +4,30 @@ let body = document.querySelector('body');
 function playVideo() {
         video.src = "./video/"+songName+".mp4";
         times = second[0]-5250;
-        console.log(times);
         timer = setInterval(function(){
-            if (body.requestFullscreen) {
-                body.requestFullscreen();
-              } else if (body.mozRequestFullScreen) {
-                body.mozRequestFullScreen(); // 兼容 Firefox
-              } else if (body.webkitRequestFullscreen) {
-                body.webkitRequestFullscreen(); // 兼容 Chrome、Safari和Opera
-              } else if (body.msRequestFullscreen) {
-                body.msRequestFullscreen(); // 兼容 Edge
-              }
             if(times == second[i]-5250) start();
             times += 25;
             Miss();
         }, 25);
         setTimeout(function(){
             video.play();
-            console.log(-second[0]+5250);
-            console.log(times);
         }, -second[0]+5975);
 }
 
+function fullscreen(){
+    if (body.requestFullscreen) {
+        body.requestFullscreen();
+      } else if (body.mozRequestFullScreen) {
+        body.mozRequestFullScreen(); // 兼容 Firefox
+      } else if (body.webkitRequestFullscreen) {
+        body.webkitRequestFullscreen(); // 兼容 Chrome、Safari、Opera
+      } else if (body.msRequestFullscreen) {
+        body.msRequestFullscreen(); // 兼容 Edge
+      }
+}
 let second;
-let sess = sessionStorage.getItem("gameHistory");
+let sess = sessionStorage.getItem("song");
         sess = JSON.parse(sess);
-        console.log(sess.Name);
         let songName = sess.Name;
         fetch('./js/song.json')
         .then(response => response.json())
@@ -45,7 +43,6 @@ let record = [];
 let times;
 let i = 0;
 function start(){
-        //console.log(times);
         let crackNum = Math.floor(Math.random() * 4);
         let crack = document.getElementsByClassName('track')[crackNum];
         let block = document.createElement('div');
@@ -71,25 +68,25 @@ function playSound(){
     keyS.play();
 }
 document.onkeydown = function(e){
-    //console.log(times);
+    fullscreen();
     record.push(times+5250);
     let crack, line;
-    if(e.keyCode == 81) {
+    if(e.keyCode == 81) { //Q
         crack = document.getElementsByClassName('track')[0];
         line = document.getElementsByClassName('line')[0];
         playSound();
     }
-    if(e.keyCode == 87) {
+    if(e.keyCode == 87) { //W
         crack = document.getElementsByClassName('track')[1];
         line = document.getElementsByClassName('line')[1];
         playSound();
     }
-    if(e.keyCode == 69) {
+    if(e.keyCode == 69) { //E
         crack = document.getElementsByClassName('track')[2];
         line = document.getElementsByClassName('line')[2];
         playSound();
     }
-    if(e.keyCode == 82) {
+    if(e.keyCode == 82) { //R
         crack = document.getElementsByClassName('track')[3];
         line = document.getElementsByClassName('line')[3];
         playSound();
@@ -124,16 +121,12 @@ let rank = {
     nice: 0,
     perfect: 0 
 };
-console.log(rank.nice);
 function addScore(crack){
     let firstBlock = crack.childNodes[1];
     let score = document.querySelector('.score');
     if(firstBlock){
         let firstTop = firstBlock.offsetTop;
-        if(firstTop < 510){
-            console.log("too far");
-        }
-        else{
+        if(firstTop >= 510){
             firstBlock.remove();
             if(firstTop == 525){
                 rank.perfect++;

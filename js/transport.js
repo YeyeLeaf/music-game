@@ -3,7 +3,7 @@
         //sesstion storage
         let sess = {Name: e.target.className};
         sess = JSON.stringify(sess);
-        sessionStorage.setItem("gameHistory", sess);
+        sessionStorage.setItem("song", sess);
     })
 
 

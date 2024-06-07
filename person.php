@@ -23,7 +23,6 @@
             print('<div class="infor">
             <img src="img/leaf.png">
             <h2>' . $name . '</h2>
-            <a href="edit.php"><button>edit</button></a>
         </div>');
         }
         ?>
